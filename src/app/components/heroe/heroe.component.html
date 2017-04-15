@@ -15,8 +15,8 @@
     <hr>
     <p>{{ heroe.bio }}</p>
     <div class="img-casa">
-      <img class="img-casa" *ngIf=" heroe.casa === 'DC' " src="assets/img/DC_logo.png" [alt]="heroe.img" class="img-fluid">
-      <img class="img-casa" *ngIf=" heroe.casa === 'Marvel' " src="assets/img/marvel_logo.jpg" [alt]="marvel_logo.jpg" class="img-fluid">
+      <img *ngIf=" heroe.casa === 'DC' " src="assets/img/DC_logo.png" [alt]="heroe.img" class="img-fluid img-casa">
+      <img *ngIf=" heroe.casa === 'Marvel' " src="assets/img/marvel_logo.jpg" [alt]="heroe.img" class="img-fluid img-casa">
     </div>
   </div>
 </div>
