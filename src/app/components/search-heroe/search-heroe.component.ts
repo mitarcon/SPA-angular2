@@ -3,20 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
-  styles: []
+  selector: 'app-search-heroe',
+  templateUrl: './search-heroe.component.html',
+  styleUrls: ['./search-heroe.component.css']
 })
-export class HeroeComponent implements OnInit {
+export class SearchHeroeComponent implements OnInit {
 
-  heroe:any = {};
+  heroesSearch:any[] = [];
 
   constructor( private _activatedRoute:ActivatedRoute,
               private _heroesService:HeroesService
               ) {
     this._activatedRoute.params.subscribe( params => {
-      this.heroe = _heroesService.getHeroe( params[ 'id' ] );
-    })
+      this.heroesSearch = _heroesService.searchHeroe( params[ 'text' ] );
+    });
   }
 
   ngOnInit() {
